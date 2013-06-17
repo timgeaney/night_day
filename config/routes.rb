@@ -1,4 +1,14 @@
 NightDay::Application.routes.draw do
+  get "static_pages/home"
+
+  get "static_pages/help"
+
+  resources :events
+
+  resources :users
+
+  root :to => "events#index"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
