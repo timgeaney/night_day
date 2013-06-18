@@ -21,6 +21,7 @@
 #  avatar_content_type    :string(255)
 #  avatar_file_size       :integer
 #  avatar_updated_at      :datetime
+#  admin                  :boolean
 #
 
 class User < ActiveRecord::Base
@@ -31,10 +32,18 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :firstname, :lastname, :avatar
+  attr_accessible :email, :password, :password_confirmation, :remember_me, 
+  :firstname, :lastname, :avatar
 
-  has_attached_file :avatar, { :styles => {:medium => "300 x 240", :thumb => "112x112#", :mini => '44x44#'}, :default_url => "/images/:style/missing.png" }
+  has_attached_file :avatar,  :styles => {:medium => "300 x 240", :thumb => "112x112#", :mini => '44x44#'}, 
+  :default_url => "/images/:style/missing.png" 
   
-  
+  has_many :events, dependent: :destroy
+
+  def full_name
+    fname = ("#{firstname}".capitalize)
+    lname = ("#{lastname}".capitalize)
+    fullname = fname + " " + lname
+  end
 
 end

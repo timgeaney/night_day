@@ -1,0 +1,7 @@
+<div id="event">
+	<div class="span offset3">
+		Event Title: <h2><%= @event.title %></h2>
+		Promoter: <h3><%= @event.user.full_name %></h3>
+		<%= link_to (image_tag @event.photo.url(:large)) %>
+	</div>
+</div>

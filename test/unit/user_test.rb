@@ -21,6 +21,7 @@
 #  avatar_content_type    :string(255)
 #  avatar_file_size       :integer
 #  avatar_updated_at      :datetime
+#  admin                  :boolean
 #
 
 require 'test_helper'

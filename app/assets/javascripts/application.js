@@ -12,5 +12,16 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.ui.all
+//= require jquery.timepicker.js
 //= require bootstrap
 //= require_tree .
+
+
+	$(function() {
+      $("#event_date").datepicker();
+
+      $("#event_time").timepicker();
+   });
+
+

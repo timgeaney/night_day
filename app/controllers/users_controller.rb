@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(params[:user])
+    @user = User.create(params[:user])
     if @user.save
     flash[:success] = "Welcome to Night & Day"
   else
@@ -16,5 +16,16 @@ class UsersController < ApplicationController
 
   def index
     @users = User.paginate(page: params[:page])
+  end
+
+  def show
+    @user = User.find(params[:id])
+  end
+
+  def destroy
+    User.find(params[:id]).destroy
+    flash[:success] = "User Destroyed"
+
+    redirect_to users_url
   end
 end

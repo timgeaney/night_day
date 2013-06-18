@@ -4,14 +4,18 @@ gem 'rails', '3.2.13'
 gem 'annotate'
 gem 'will_paginate', '3.0.3'
 gem 'devise'
-gem 'paperclip', '~>3.0.3'
+gem 'paperclip', '3.4.2'
 gem 'simple_form'
+gem 'jquery-timepicker-rails'
+
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'
+  gem 'faker', '1.0.1'
+  
 end
 
 group :production do

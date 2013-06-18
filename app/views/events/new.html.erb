@@ -1,2 +1,52 @@
 <h1>Events#new</h1>
-<p>Find me in app/views/events/new.html.erb</p>
+<div id="content">
+  <div class="span offset3">
+    <%= form_for @event, :url => events_path, :html => { :multipart => true } do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+
+    <fieldset>
+      <%= f.label :category %>
+      <%= f.text_field :category %>
+    </fieldset>
+
+    <fieldset>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </fieldset>
+
+    <fieldset>
+      <%= f.label :date %>
+      <%= f.text_field :date %>
+    </fieldset>
+
+    <fieldset>
+      <%= f.label :time %>
+      <%= f.text_field :time %>
+    </fieldset>
+
+    <fieldset>
+      <%= f.label :street %>
+      <%= f.text_field :street %>
+    </fieldset>
+
+    <fieldset>
+      <%= f.label :description %>
+      <%= f.text_area :description, :size => "30x20", placeholder: "Add a description here....."%>
+    </fieldset>
+
+    <fieldset>
+      <%= f.label :photo, "Upload your Photo"%>
+      <%= f.file_field :photo %>
+    </fieldset>
+
+    <fieldset>
+      <%= f.label :image_remote_url, "or enter your url"%>
+      <%= f.text_field :image_remote_url %>
+    </fieldset>
+
+    <fieldset>
+      <%= f.submit "Post" %>
+    </fieldset>
+  <% end %>
+</div>
+</div>

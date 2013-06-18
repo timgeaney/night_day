@@ -1,9 +1,8 @@
 <li>
-	<%= link_to (image_tag user.avatar.url(:thumb)), user %>
-	<%= link_to user.firstname, user %>
-	
-	<%= link_to "delete", user, method: :delete,
-									  data: { confirm: "You Sure?" } %>
+    <%= link_to (image_tag user.avatar.url(:mini)), user %>
+    <%= link_to user.full_name, user %>
 
-
+    <% if current_user.try(:admin?) || current_user %>
+      <%= link_to "delete", user, method: :delete, data: { confirm: "You Sure?" } %>
+    <% end %>
 </li>
