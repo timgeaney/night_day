@@ -10,6 +10,8 @@ NightDay::Application.routes.draw do
 
   resources :users
 
+  resources :likes, :only => [:create, :destroy]
+
   root :to => "events#index"
 
   # The priority is based upon order of creation:

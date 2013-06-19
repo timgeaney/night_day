@@ -39,11 +39,16 @@ class User < ActiveRecord::Base
   :default_url => "/images/:style/missing.png" 
   
   has_many :events, dependent: :destroy
+  has_many :likes
 
   def full_name
     fname = ("#{firstname}".capitalize)
     lname = ("#{lastname}".capitalize)
     fullname = fname + " " + lname
+  end
+
+  def has_like?(event)
+    self.likes.find(:all, :conditions => ['event_id = ?', event.id]).size > 0
   end
 
 end

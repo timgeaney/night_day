@@ -45,6 +45,7 @@ class Event < ActiveRecord::Base
                                size: { less_than: 5.megabytes }
 
   belongs_to :user
+  has_many :likes
 
   default_scope order: 'events.created_at DESC'
 

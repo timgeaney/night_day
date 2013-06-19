@@ -4,4 +4,8 @@
 		Promoter: <h3><%= @event.user.full_name %></h3>
 		<%= link_to (image_tag @event.photo.url(:large)) %>
 	</div>
+
+	<div id="like">
+		<%= render 'likes/like_form' %>
+	</div>
 </div>
