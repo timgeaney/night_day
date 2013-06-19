@@ -8,7 +8,8 @@
 		Promoter: <h3><%= @event.user.full_name %></h3>
 		<%= image_tag @event.photo.url(:large) %>
 	  </div>
-
+      <strong id="likes"><% @event.likes.count %></strong> likes
+      
 	  <div id="like">
 		<%= render 'likes/like_form' %>
 	  </div>
