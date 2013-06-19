@@ -1,11 +1,16 @@
-<div id="event">
-	<div class="span offset3">
+
+<button class="btn btn-mini" type="button" id="flip">Flip</button>
+<button class="btn btn-mini" type="button" id="reverse">Reverse</button>
+  <div class="flipbox-container">
+    <div class="flipbox">
+	  <div class="span offset3">
 		Event Title: <h2><%= @event.title %></h2>
 		Promoter: <h3><%= @event.user.full_name %></h3>
-		<%= link_to (image_tag @event.photo.url(:large)) %>
-	</div>
+		<%= image_tag @event.photo.url(:large) %>
+	  </div>
 
-	<div id="like">
+	  <div id="like">
 		<%= render 'likes/like_form' %>
-	</div>
-</div>
+	  </div>
+    </div>
+  </div>

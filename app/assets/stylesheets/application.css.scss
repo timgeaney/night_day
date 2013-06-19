@@ -23,15 +23,23 @@ $btnPrimaryBackground: purple;
 
 body{
     padding-top: 60px;
+    background-color: #666666;
+    color: white;
 }
 
 @import 'bootstrap-responsive';
 
 .navbar-inner{
     @include box-shadow(none !important);
-    border: 0;
+    border: 100;
 }
 
+
+.header{
+    background-color:black;
+    border-style:solid;
+    border-color:black;
+}
 .footer{
     margin-top: 50px;
     color: $grayLight;
@@ -44,9 +52,9 @@ body{
 	position: absolute;
 	top: 10px;
 	right: 5px;
+    background-color:black;
 }
 
-.event { width: 50%; }
 
 // Masonry Layout for events index
 
@@ -56,9 +64,7 @@ body{
     font-size: 11px;
     line-height: 1.4em;
     float: left;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
+    
     box-shadow: 1px 1px 10px #444;
     width: 214px;
 }
@@ -66,9 +72,12 @@ body{
 .item img {
     width: 100%;
     height: 100%;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
+    
+}
+
+.item:hover {
+    background: #AC54AA;
+    cursor: pointer;
 }
 
 .description {
